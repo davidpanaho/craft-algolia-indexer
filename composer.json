@@ -1,0 +1,8 @@
+{
+    "config": {
+        "vendor-dir": "algoliaindexer/vendor"
+    },
+    "require": {
+        "algolia/algoliasearch-client-php": "^1.25"
+    }
+}
