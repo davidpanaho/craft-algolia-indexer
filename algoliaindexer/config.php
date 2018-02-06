@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'algoliaAppId' => '',
-    'algoliaAdminKey' => '',
+    'appId' => '',
+    'adminKey' => '',
+    'userIndex' => '',
 ];
