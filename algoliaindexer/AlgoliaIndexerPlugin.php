@@ -4,23 +4,33 @@ namespace Craft;
 
 class AlgoliaIndexerPlugin extends BasePlugin
 {
-    function getName()
+    public function getName()
     {
          return 'Algolia Indexer';
     }
 
-    function getVersion()
+    public function getVersion()
     {
         return '1.0.0';
     }
 
-    function getDeveloper()
+    public function getDeveloper()
     {
         return 'David Panaho';
     }
 
-    function getDeveloperUrl()
+    public function getDeveloperUrl()
     {
         return 'https://www.davidpanaho.com';
+    }
+
+    public function init()
+    {
+        
+    }
+
+    public function hasCpSection()
+    {
+        return true;
     }
 }
