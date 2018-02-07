@@ -37,16 +37,24 @@ class AlgoliaIndexerService extends BaseApplicationComponent
         $records = [];
 
         foreach ($users as $key => $user) {
+            $tags = [];
+
+            foreach ($user->userSpecialities as $key => $value) {
+                $tags[] = $value->title;
+            }
+
             $images = [];
             $profileImage = $user->userProfileImage;
             foreach ($profileImage as $image) {
                 $images['small'] = $image->getUrl('small');
                 $images['medium'] = $image->getUrl('medium');
                 $images['large'] = $image->getUrl('large');
+                $images['original'] = $image->url;
             }
 
             $record = [
                 'objectID' => $user->id,
+                'id' => $user->id,
                 'firstName' => $user->firstName,
                 'lastName' => $user->lastName,
                 'jobTitle' => $user->userJobTitle,
