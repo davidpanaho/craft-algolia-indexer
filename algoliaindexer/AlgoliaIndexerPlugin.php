@@ -27,6 +27,13 @@ class AlgoliaIndexerPlugin extends BasePlugin
     public function init()
     {
         require_once __DIR__.'/vendor/autoload.php';
+
+        if (craft()->config->get('autoIndex', 'algoliaindexer')) {
+            craft()->on('users.onSaveUser', function (Event $event) {
+                $user = $event->params['user'];
+                craft()->algoliaIndexer->indexUser($user->id);
+            });
+        }
     }
 
     public function hasCpSection()
